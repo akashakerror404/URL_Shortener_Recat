@@ -11,8 +11,8 @@ function Short() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/api-new', { original_url: url });
-      setShortUrl(`http://127.0.0.1:8000/api/${response.data.short_code}`);
+      const response = await axios.post('https://test.akashak.online/api/api-new', { original_url: url });
+      setShortUrl(`https://test.akashak.online/api/${response.data.short_code}`);
       setRecentLinks([response.data, ...recentLinks.slice(0, 4)]);
       setError('');
     } catch (err) {
@@ -90,7 +90,7 @@ function Short() {
                 <li key={link.short_code} className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
                   <div className="flex justify-between items-center">
                     <a 
-                      href={`http://127.0.0.1:8000/api/${link.short_code}`} 
+                      href={`https://test.akashak.online/api/${link.short_code}`} 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-indigo-600 hover:text-indigo-800 font-medium"
